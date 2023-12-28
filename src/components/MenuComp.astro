@@ -6,7 +6,7 @@
   <div class="flex justify-end m-2" id="navBar">
     <!-- Hamburger Menu for Small Screens -->
     <div
-      class="sm:hidden cursor-pointer text-4xl border-2 border-black rounded-md bg-white px-14 py-2 select-none"
+      class="sm:hidden cursor-pointer text-3xl border-4 border-black rounded-md bg-white px-16 py-4 select-none"
       id="navHeader"
     >
       &#8801;
@@ -14,22 +14,43 @@
 
     <!-- Horizontal Links for Larger Screens -->
     <div
-      class="hidden sm:flex space-x-4 items-center"
+      class="hidden sm:flex space-x-4 items-center text-4xl"
       id="dropdownDesktop"
     >
-      <a href="/" class="text-black py-2 hover:bg-gray-300 px-4">Home</a>
-      <a href="/About" class="text-black py-2 hover:bg-gray-300 px-4">About Me</a>
-      <a href="/Contact" class="text-black py-2 hover:bg-gray-300 px-4">Contact</a>
+      <a href="/" class="text-black py-2 hover:underline px-4">Home</a>
+      <a href="/about" class="text-black py-2 hover:underline px-4">About Me</a>
+      <a href="/gallery" class="text-black py-2 hover:underline px-4">Gallery</a
+      >
+      <a href="/contact" class="text-black py-2 hover:underline px-4">Contact</a
+      >
     </div>
 
     <!-- Dropdown Menu for Small Screens -->
     <div
-      class="hidden absolute text-2xl right-2 z-10 flex-col border-2 border-black rounded-md mt-5 bg-white w-fit top-10"
+      class="hidden sm:hidden absolute text-3xl right-3 z-10 flex-col border-2 border-black rounded-md mt-5 bg-white w-fit top-16"
       id="dropdown"
     >
-      <a href="/" class="block text-black py-2 px-4 border-black hover:bg-gray-300">Home</a>
-      <a href="/About" class="block text-black py-2 px-4 border-t-2 border-black hover:bg-gray-300">About Me</a>
-      <a href="/Contact" class="block text-black py-2 px-4 border-t-2 border-black hover:bg-gray-300">Contact</a>
+      <a
+        href="/"
+        class="block text-black py-2 px-2 border-black hover:bg-gray-300 hover:rounded-md"
+        >Home</a
+      >
+      <a
+        href="/about"
+        class="block text-black py-2 px-2 border-t-2 border-black hover:bg-gray-300 hover:rounded-md"
+        >About Me</a
+      >
+      <a
+        href="/gallery"
+        class="block text-black py-2 px-2 border-t-2 border-black hover:bg-gray-300 hover:rounded-md"
+        >Gallery</a
+      >
+
+      <a
+        href="/contact"
+        class="block text-black py-2 px-2 border-t-2 border-black hover:bg-gray-300 hover:rounded-md"
+        >Contact</a
+      >
     </div>
   </div>
 </section>
@@ -38,5 +59,3 @@
     document.getElementById("dropdown").classList.toggle("hidden");
   });
 </script>
-
-

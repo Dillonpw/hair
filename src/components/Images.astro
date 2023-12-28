@@ -1,0 +1,25 @@
+---
+interface Images {
+  src: string;
+  title: string;
+}
+
+const images: Images[] = [
+  {
+    src: "/DCS-home.png",
+    title: "test img",
+    desc: "Description of Image 1",
+  },
+];
+---
+
+<section>
+  {
+    images.map((image, index) => (
+      <div key={index}>
+        <img class="w-80 h-auto" src={image.src} alt={image.title} />
+        <h3>{image.title}</h3>
+      </div>
+    ))
+  }
+</section>
