@@ -7,13 +7,13 @@ const{ title } = Astro.props;
 import Header from "../components/Header.astro";
 ---
 
-<html class="bg-gradient-to-br from-pink-300 to bg-pink-600" lang="en">
+<html  lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="bg-gradient-to-br from-pink-200 to-pink-400 min-h-screen">
     <Header title={title} />
     <slot />
   </body>

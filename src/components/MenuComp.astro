@@ -2,29 +2,41 @@
 
 ---
 
-<div id="navBar">
-  <nav id="navHeader">&#8801;</nav>
-  <div id="dropdown">
-    <a href="/">Home</a>
-    <a href="/About">Age Calculator</a>
-    <a href="/Contact">Schedule Tracker</a>
-  </div>
-</div>
-<script>
-  function toggleDropdown() {
-    const dropdown = document.getElementById("dropdown");
-    if (dropdown) {
-      dropdown.classList.toggle("show");
-    } else {
-      console.error("Dropdown element not found");
-    }
-  }
+<section>
+  <div class="flex justify-end m-2" id="navBar">
+    <!-- Hamburger Menu for Small Screens -->
+    <div
+      class="sm:hidden cursor-pointer text-4xl border-2 border-black rounded-md bg-white px-14 py-2 select-none"
+      id="navHeader"
+    >
+      &#8801;
+    </div>
 
-  document.addEventListener("click", (event) => {
-    const isNavHeader =
-      event.target.matches("#navHeader") || event.target.closest("#navHeader");
-    if (isNavHeader) {
-      toggleDropdown();
-    }
+    <!-- Horizontal Links for Larger Screens -->
+    <div
+      class="hidden sm:flex space-x-4 items-center"
+      id="dropdownDesktop"
+    >
+      <a href="/" class="text-black py-2 hover:bg-gray-300 px-4">Home</a>
+      <a href="/About" class="text-black py-2 hover:bg-gray-300 px-4">About Me</a>
+      <a href="/Contact" class="text-black py-2 hover:bg-gray-300 px-4">Contact</a>
+    </div>
+
+    <!-- Dropdown Menu for Small Screens -->
+    <div
+      class="hidden absolute text-2xl right-2 z-10 flex-col border-2 border-black rounded-md mt-5 bg-white w-fit top-10"
+      id="dropdown"
+    >
+      <a href="/" class="block text-black py-2 px-4 border-black hover:bg-gray-300">Home</a>
+      <a href="/About" class="block text-black py-2 px-4 border-t-2 border-black hover:bg-gray-300">About Me</a>
+      <a href="/Contact" class="block text-black py-2 px-4 border-t-2 border-black hover:bg-gray-300">Contact</a>
+    </div>
+  </div>
+</section>
+<script>
+  document.getElementById("navHeader").addEventListener("click", function () {
+    document.getElementById("dropdown").classList.toggle("hidden");
   });
 </script>
+
+
