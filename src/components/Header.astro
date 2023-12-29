@@ -4,10 +4,16 @@ interface Props {
 }
 
 //import Logo from "./Logo.astro"; add logo later
+import Social from "./Social.astro";
 import Menu from "./MenuComp.astro";
 ---
 
-<header class="header">
+<header
+  class="flex items-center justify-between border-b-4 border-black bg-pink-200"
+>
+<h1 class="ml-2 flex items-center justify-center text-4xl">Logo</h1>
+
+  <Social />
   <!-- <Logo /> -->
   <Menu />
 </header>

@@ -3,10 +3,10 @@
 ---
 
 <section>
-  <div class="flex justify-end m-2" id="navBar">
+  <div class="m-2 flex justify-end" id="navBar">
     <!-- Hamburger Menu for Small Screens -->
     <div
-      class="sm:hidden cursor-pointer text-3xl border-4 border-black rounded-md bg-white px-16 py-4 select-none"
+      class="cursor-pointer select-none rounded-md border-4 border-black bg-white px-16 py-4 text-3xl md:hidden"
       id="navHeader"
     >
       &#8801;
@@ -14,48 +14,55 @@
 
     <!-- Horizontal Links for Larger Screens -->
     <div
-      class="hidden sm:flex space-x-4 items-center text-4xl"
+      class="hidden items-center space-x-4 text-4xl md:flex"
       id="dropdownDesktop"
     >
-      <a href="/" class="text-black py-2 hover:underline px-4">Home</a>
-      <a href="/about" class="text-black py-2 hover:underline px-4">About Me</a>
-      <a href="/gallery" class="text-black py-2 hover:underline px-4">Gallery</a
+      <a href="/" class="px-2 py-2 text-black hover:underline">Home</a>
+      <a href="/about" class="px-2 py-2 text-black hover:underline">About</a>
+      <a href="/gallery" class="px-2 py-2 text-black hover:underline">Gallery</a
       >
-      <a href="/contact" class="text-black py-2 hover:underline px-4">Contact</a
+      <a href="/contact" class="px-2 py-2 text-black hover:underline">Contact</a
       >
     </div>
 
     <!-- Dropdown Menu for Small Screens -->
     <div
-      class="hidden sm:hidden absolute text-3xl right-3 z-10 flex-col border-2 border-black rounded-md mt-5 bg-white w-fit top-16"
+      class="absolute right-3 top-16 z-10 mt-5 hidden w-fit flex-col rounded-md border-2 border-black bg-white text-3xl md:hidden"
       id="dropdown"
     >
       <a
         href="/"
-        class="block text-black py-2 px-2 border-black hover:bg-gray-300 hover:rounded-md"
+        class="block border-black px-2 py-2 text-black hover:rounded-md hover:bg-gray-300"
         >Home</a
       >
       <a
         href="/about"
-        class="block text-black py-2 px-2 border-t-2 border-black hover:bg-gray-300 hover:rounded-md"
+        class="block border-t-2 border-black px-2 py-2 text-black hover:rounded-md hover:bg-gray-300"
         >About Me</a
       >
       <a
         href="/gallery"
-        class="block text-black py-2 px-2 border-t-2 border-black hover:bg-gray-300 hover:rounded-md"
+        class="block border-t-2 border-black px-2 py-2 text-black hover:rounded-md hover:bg-gray-300"
         >Gallery</a
       >
 
       <a
         href="/contact"
-        class="block text-black py-2 px-2 border-t-2 border-black hover:bg-gray-300 hover:rounded-md"
+        class="block border-t-2 border-black px-2 py-2 text-black hover:rounded-md hover:bg-gray-300"
         >Contact</a
       >
     </div>
   </div>
 </section>
 <script>
-  document.getElementById("navHeader").addEventListener("click", function () {
-    document.getElementById("dropdown").classList.toggle("hidden");
+  document.addEventListener("DOMContentLoaded", () => {
+    const navHeader = document.getElementById("navHeader");
+    const dropdown = document.getElementById("dropdown");
+
+    if (navHeader instanceof HTMLElement && dropdown instanceof HTMLElement) {
+      navHeader.addEventListener("click", () => {
+        dropdown.classList.toggle("hidden");
+      });
+    }
   });
 </script>
